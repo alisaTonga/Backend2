@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/src/consultations/Consultation1/Consultation1.iml" filepath="$PROJECT_DIR$/src/consultations/Consultation1/Consultation1.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/lesson1_07_08_24/Lesson1/Lesson1.iml" filepath="$PROJECT_DIR$/src/lesson1_07_08_24/Lesson1/Lesson1.iml" />
       <module fileurl="file://$PROJECT_DIR$/backend.iml" filepath="$PROJECT_DIR$/backend.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/lesson2_08_08_2024/demo_spring_intro/demo_spring_intro.iml" filepath="$PROJECT_DIR$/src/lesson2_08_08_2024/demo_spring_intro/demo_spring_intro.iml" />
