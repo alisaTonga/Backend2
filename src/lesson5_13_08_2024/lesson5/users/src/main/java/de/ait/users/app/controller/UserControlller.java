@@ -1,6 +1,7 @@
 package de.ait.users.app.controller;
 
-import de.ait.users.app.entity.User;
+import de.ait.users.app.DTO.UserRequestDTO;
+import de.ait.users.app.DTO.UserResponseDto;
 import de.ait.users.app.service.UserServiceInt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,19 +19,26 @@ public class UserControlller {
     }
 
     @GetMapping("/users")
-    public List<User> getUsers(@RequestParam (name= "n", required = false, defaultValue = "") String name,
-                                @RequestParam (name= "e", required = false, defaultValue = "") String email){
+    public List<UserResponseDto> getUsers(@RequestParam (name= "n", required = false, defaultValue = "") String name,
+                                          @RequestParam (name= "e", required = false, defaultValue = "") String email){
 
         return service.getUsers(name, email);
     }
 
+
     @PostMapping("/users")
-    public User createNewUser(@RequestBody User user){
-        return service.createNewUser(user);
+    public UserResponseDto createNewUser(@RequestBody UserRequestDTO userDto){
+        return service.createNewUser(userDto);
     }
+
     @GetMapping("/users/{id}")
-    public User getUserById(@PathVariable(name = "id") Long id){
+    public UserResponseDto getUserById(@PathVariable(name = "id") Long id){
         return service.findById(id);
+    }
+
+    @PutMapping("/users/{id}")
+    public UserResponseDto updateUser(@PathVariable(name="id") Long id ,@RequestBody UserRequestDTO userDto){
+        return service.updateUser(id, userDto);
     }
 
 }
