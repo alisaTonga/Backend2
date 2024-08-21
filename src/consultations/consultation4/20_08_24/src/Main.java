@@ -38,10 +38,17 @@ public class Main {
 
         Map<String, List<Person>> m1 = people.stream().collect(Collectors.groupingBy(p -> p.getName()));
 
-        //people.stream().collect(Collectors.groupingBy(p->p.getName(), Collectors.collectingAndThen(Collectors.partitioningBy(p->p.getAge()> 20), p->p.)))
+
         Integer res5 = people.stream()
                 .collect(Collectors.collectingAndThen(Collectors.toList(), l -> l.size()));
         System.out.println("Result 5: " + res5);
+
+        List<Person> Result_6 = people.stream()
+                .toList()
+                .stream()
+                .filter(p -> p.getAge() > 25)
+                .toList();
+        System.out.println("Result 6 variant 2:" + Result_6);
     }
 
 }

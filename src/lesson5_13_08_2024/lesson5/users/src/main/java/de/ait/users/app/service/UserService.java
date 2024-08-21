@@ -70,12 +70,4 @@ public class UserService implements UserServiceInt{
         user.setId(id);
         return UserResponseDto.of(repository.save(user));
     }
-
-
-    public List<UserResponseDto> findByName(String name) {
-        return findAll()
-                .stream()
-                .filter(u->u.getName().equals(name))
-                .toList();
-    }
 }
