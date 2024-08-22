@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="jdbc_demo" />
         <module name="lesson5" />
+        <module name="lesson11" />
         <module name="Consultation3" />
         <module name="product_service" />
         <module name="Consultation2" />
